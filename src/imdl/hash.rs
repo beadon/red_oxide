@@ -9,9 +9,9 @@ pub async fn verify_torrent_hash(
     let mut cmd = Command::new(get_imdl_executable_name());
     cmd.arg("torrent");
     cmd.arg("verify");
-    cmd.arg(torrent_path);
+    cmd.arg("\"torrent_path\"");
     cmd.arg("--content");
-    cmd.arg(content_path);
+    cmd.arg("\"content_path\"");
 
     let output = match cmd.output().await {
         Ok(o) => o,
